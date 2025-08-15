@@ -1,8 +1,6 @@
 const Medicine = require('../models/medicineModel');
 
-// @desc    Create a new medicine
-// @route   POST /api/medicines
-// @access  Private (for now)
+
 exports.createMedicine = async (req, res) => {
   try {
     const medicine = await Medicine.create(req.body);
@@ -15,9 +13,7 @@ exports.createMedicine = async (req, res) => {
   }
 };
 
-// @desc    Get all medicines
-// @route   GET /api/medicines
-// @access  Public
+
 exports.getAllMedicines = async (req, res) => {
   try {
     const medicines = await Medicine.find();
@@ -31,9 +27,6 @@ exports.getAllMedicines = async (req, res) => {
   }
 };
 
-// @desc    Get a single medicine by ID
-// @route   GET /api/medicines/:id
-// @access  Public
 exports.getMedicineById = async (req, res) => {
   try {
     const medicine = await Medicine.findById(req.params.id);
@@ -49,9 +42,7 @@ exports.getMedicineById = async (req, res) => {
   }
 };
 
-// @desc    Update a medicine
-// @route   PATCH /api/medicines/:id
-// @access  Private (for now)
+
 exports.updateMedicine = async (req, res) => {
   try {
     const medicine = await Medicine.findByIdAndUpdate(req.params.id, req.body, {
@@ -70,9 +61,7 @@ exports.updateMedicine = async (req, res) => {
   }
 };
 
-// @desc    Delete a medicine
-// @route   DELETE /api/medicines/:id
-// @access  Private (for now)
+
 exports.deleteMedicine = async (req, res) => {
   try {
     const medicine = await Medicine.findByIdAndDelete(req.params.id);
